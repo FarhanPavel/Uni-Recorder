@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1663089069 source:d:\codeforce\empty2\main.cpp
+	<iostream>
+	<conio.h>
+
