@@ -3,10 +3,18 @@
     /// 2. Previous Page
     /// 3. Project Name
     /// 4. Frame Design
+    /// 5.student input more than one
 
 #include <iostream>
 //#include<conio.h>
+#include<string>
 using namespace std;
+
+struct student{
+string name;
+string department;
+int  roll;
+};
 
 
 /// Function for About Developers
@@ -14,21 +22,56 @@ void about_developers()
 {
     cout << "About Us\n\n";
 }
+void add_student()
+{
+    struct student s1;
+    cout<<"\n";
+    cout <<"\t\t\t\t  Enter Full Name: ";
+    cin>>s1.name;
+    cout<<"\t\t\t\t  Enter Department: ";
+    cin>>s1.department;
+    cout <<"\t\t\t\t  Enter Roll No: ";
+    cin>>s1.roll;
+    cout<<"\n";
+    cout<<"\t\t\t\t Student Info Added Successfully...."<<endl;
+///file handleing part
 
+}
 /// Function for Student Operations
 void student_op()
 {
+    char operation;
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "\t\t\t\t     Operations\n\n";
     cout << "\t\t\t\t 1. Add New Student Info\n";
     cout << "\t\t\t\t 2. Delete Student Info\n";
     cout << "\t\t\t\t 3. Modify Student Info\n";
+    cout<<"\n";
+    while(1)
+    {cout<<"\t\t\t   Which Operation do you want to perform?: ";
+    cin>>operation;
+    if(operation=='1')
+    {
+        add_student();
+        break;
+    }
+    else if(operation=='2')
+    {
+        break;
+    }
+    else if(operation=='3')
+    {
+        break;
+    }
+
+    }
+
+
 }
 
-/*void add_student()
-{
-    cout <<
-}*/
+
+
+
 
 /// Function for student info
 void student_info()
