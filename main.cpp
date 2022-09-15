@@ -16,6 +16,11 @@ string department;
 int  roll;
 };
 
+struct teacher{
+    string name;
+    string department;
+    string position;
+};
 
 /// Function for About Developers
 void about_developers()
@@ -24,12 +29,15 @@ void about_developers()
 }
 void add_student()
 {
+    char enter;
     struct student s1;
     cout<<"\n";
     cout <<"\t\t\t\t  Enter Full Name: ";
-    cin>>s1.name;
+    cin >> enter;
+    getline(cin, s1.name);
     cout<<"\t\t\t\t  Enter Department: ";
-    cin>>s1.department;
+    cin >> enter;
+    getline(cin, s1.department);
     cout <<"\t\t\t\t  Enter Roll No: ";
     cin>>s1.roll;
     cout<<"\n";
@@ -93,13 +101,54 @@ void student_info()
         /// Go to find student info
 
 }
+
+void add_teacher()
+{
+    char enter;
+    struct teacher t1;
+    cout<<"\n";
+    cout <<"\t\t\t\t  Enter Full Name: ";
+    cin >> enter;
+    getline(cin, t1.name);
+    cout<<"\t\t\t\t  Enter Department: ";
+    cin >> enter;
+    getline(cin, t1.department);
+    cout <<"\t\t\t\t  Enter Position: ";
+    cin >> enter;
+    getline(cin, t1.position);
+    cout<<"\n";
+    cout<<"\t\t\t\t Teacher Info Added Successfully...."<<endl;
+///file handleing part
+}
+
 void teacher_op()
 {
+    char operation;
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "\t\t\t\t     Operations\n\n";
     cout << "\t\t\t\t 1. Add New Teacher Info\n";
     cout << "\t\t\t\t 2. Delete Teacher Info\n";
-    cout << "\t\t\t\t 3. Modify Teacher Info\n";
+    cout << "\t\t\t\t 3. Modify Teacher Info\n\n";
+
+    while(1)
+    {
+        cout << "\t\t\t   Which Operation do you want to perform?: ";
+        cin >> operation;
+        if(operation=='1')
+        {
+            add_teacher();
+            break;
+        }
+        else if(operation=='2')
+        {
+            break;
+        }
+        else if(operation=='3')
+        {
+            break;
+        }
+
+    }
 }
 
 void teacher_info()
@@ -125,11 +174,6 @@ void teacher_info()
 
 
 }
-
-
-
-
-
 
 /// Function for Staff Operations
 void staff_op()
