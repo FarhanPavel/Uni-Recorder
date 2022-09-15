@@ -50,6 +50,44 @@ void student_info()
         /// Go to find student info
 
 }
+void teacher_op()
+{
+    cout << "\n\n\n\n\n\n\n\n\n";
+    cout << "\t\t\t\t     Operations\n\n";
+    cout << "\t\t\t\t 1. Add New Teacher Info\n";
+    cout << "\t\t\t\t 2. Delete Teacher Info\n";
+    cout << "\t\t\t\t 3. Modify Teacher Info\n";
+}
+
+void teacher_info()
+{
+    cout << "\n\n\n\n\n\n\n\n\n";
+    cout << "\t\t\t\t     Teacher's Info\n\n";
+    cout << "\t\t\t\t 1. Operations\n";
+    cout << "\t\t\t\t 2. Find Teacher Info\n\n";
+    char teacher_info_op;
+    cout << "\t\t\t  Which Operation do you want to perform?: ";
+    cin >> teacher_info_op;
+    if(teacher_info_op=='1')
+    {
+        ///Go to teacher operation
+        teacher_op();
+    }
+    else if(teacher_info_op=='2');
+    {
+       ///go to previous teacher info finding page
+
+    }
+
+
+
+}
+
+
+
+
+
+
 /// Function for Staff Operations
 void staff_op()
 {
@@ -133,9 +171,11 @@ int main(){
         student_info();
         break;
    }
-    else if (start_page_operation == '2')
+    else if (start_page_operation == '2'){
         /// Go to teacher info
+        teacher_info();
         break;
+    }
     else if (start_page_operation == '3') {
         /// Go to staff info
         staff_info();
