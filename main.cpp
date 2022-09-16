@@ -11,13 +11,19 @@
 #include<windows.h>
 using namespace std;
 
-struct student{
+struct student {
 string name;
 string department;
 int  roll;
 };
 
-struct teacher{
+struct teacher {
+    string name;
+    string department;
+    string position;
+};
+
+struct staff {
     string name;
     string department;
     string position;
@@ -78,10 +84,6 @@ void student_op()
 
 }
 
-
-
-
-
 /// Function for student info
 void student_info()
 {
@@ -103,6 +105,7 @@ void student_info()
 
 }
 
+/// Function for adding new teacher
 void add_teacher()
 {
     char enter;
@@ -119,9 +122,10 @@ void add_teacher()
     getline(cin, t1.position);
     cout<<"\n";
     cout<<"\t\t\t\t Teacher Info Added Successfully...."<<endl;
-///file handleing part
+///file handling part
 }
 
+/// Function for handling teacher operations
 void teacher_op()
 {
     char operation;
@@ -152,6 +156,7 @@ void teacher_op()
     }
 }
 
+/// Function for teacher info
 void teacher_info()
 {
     cout << "\n\n\n\n\n\n\n\n\n";
@@ -171,19 +176,57 @@ void teacher_info()
        ///go to previous teacher info finding page
 
     }
+}
 
-
-
+/// Function for adding new staff
+void add_staff()
+{
+    char enter;
+    struct staff st1;
+    cout<<"\n";
+    cout <<"\t\t\t\t  Enter Full Name: ";
+    cin >> enter;
+    getline(cin, st1.name);
+    cout<<"\t\t\t\t  Enter Department: ";
+    cin >> enter;
+    getline(cin, st1.department);
+    cout <<"\t\t\t\t  Enter Position: ";
+    cin >> enter;
+    getline(cin, st1.position);
+    cout<<"\n";
+    cout<<"\t\t\t\t Staff Info Added Successfully...."<<endl;
+///file handling part
 }
 
 /// Function for Staff Operations
 void staff_op()
 {
+    char operation;
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "\t\t\t\t     Operations\n\n";
     cout << "\t\t\t\t 1. Add New Staff Info\n";
     cout << "\t\t\t\t 2. Delete Staff Info\n";
-    cout << "\t\t\t\t 3. Modify Staff Info\n";
+    cout << "\t\t\t\t 3. Modify Staff Info\n\n";
+
+    while(1)
+    {
+        cout << "\t\t\t   Which Operation do you want to perform?: ";
+        cin >> operation;
+        if(operation == '1')
+        {
+            add_staff();
+            break;
+        }
+        else if(operation == '2')
+        {
+            break;
+        }
+        else if(operation == '3')
+        {
+            break;
+        }
+
+    }
 }
 
 /// Function for Staff Info
@@ -205,11 +248,6 @@ void staff_info()
     else if (staff_info_op == '2');
         /// Go to find staff info
 }
-
-
-
-
-
 
 
 int main(){
