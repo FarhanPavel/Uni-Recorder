@@ -8,6 +8,7 @@
 #include <iostream>
 //#include<conio.h>
 #include<string>
+#include<windows.h>
 using namespace std;
 
 struct student{
@@ -214,26 +215,26 @@ void staff_info()
 int main(){
 
     char start_page_operation;
-
+    HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(h,9);
    cout<<endl;
-   cout<<"\t\t\t       "<<"%zpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzp%";
-   cout<<endl<<"\t\t\t       p\t\t\t\t\t\t    z"<<endl<<"\t\t\t       z\t\t\t\t\t\t    p";
+   cout<<"\t\t\t       "<<"pzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpz";
+   cout<<endl<<"\t\t\t       ~\t\t\t\t\t\t    ~"<<endl<<"\t\t\t       ~\t\t\t\t\t\t    ~";
    cout<<""<<endl;//project name
-   cout<<"\t\t\t       p\t"<<" Student Record Management System"<<"\t    z"<<endl;
-   cout<<"\t\t\t       z\t"<<"\t\t\t\t\t    p"<<"\n";
-   cout<<"\t\t\t       p\t"<<"\t\t\t\t\t    z"<<"\n";
-   cout<<"\t\t\t       z\t"<<"   Developed By: Pavel && Zunaid\t    p"<<endl<<"\t\t\t       p\t\t\t\t\t\t    z"<<endl;
-   cout<<"\t\t\t       z\t\t    "<<"IIT-12\t\t\t    p"<<endl<<"\t\t\t       p\t\t\t\t\t\t    z"<<endl;
-   cout<<"\t\t\t       z\t     "<<"Jahangirnagar University\t\t    p"<<endl<<"\t\t\t       p\t   \t\t\t\t\t    z"<<endl;
-   cout<<"\t\t\t       z\t     \t\t\t\t\t    p"<<endl<<"\t\t\t       p\t     \t\t\t\t\t    z"<<endl;
-   cout<<"\t\t\t       "<<"%pzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpz%" << endl << endl;
-   cout << "\t\t\t       \t\t   Press ENTER To Continue\n";
+   cout<<"\t\t\t       ~\t"<<" Student Record Management System"<<"\t    ~"<<endl;
+   cout<<"\t\t\t       ~\t"<<"\t\t\t\t\t    ~"<<"\n";
+   cout<<"\t\t\t       ~\t"<<"\t\t\t\t\t    ~"<<"\n";
+   cout<<"\t\t\t       ~\t"<<"   Developed By: Pavel && Zunaid\t    ~"<<endl<<"\t\t\t       ~\t\t\t\t\t\t    ~"<<endl;
+   cout<<"\t\t\t       ~\t\t    "<<"IIT-12\t\t\t    ~"<<endl<<"\t\t\t       ~\t\t\t\t\t\t    ~"<<endl;
+   cout<<"\t\t\t       ~\t     "<<"Jahangirnagar University\t\t    ~"<<endl<<"\t\t\t       ~\t   \t\t\t\t\t    ~"<<endl;
+   cout<<"\t\t\t       ~\t     \t\t\t\t\t    ~"<<endl<<"\t\t\t       ~\t     \t\t\t\t\t    ~"<<endl;
+   cout<<"\t\t\t       "<<"zpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzp" << endl << endl;
+   cout << "\t\t\t       \t\t   Press ENTER To Continue"<<ends;
 
    while (cin.get() != '\n')
    {
        cin.get();
    }
-   cout << "This is the next page\n";
    cout << endl<< endl<< endl<< endl<< endl;
 
    ///Start Page
@@ -281,3 +282,4 @@ int main(){
 
     //getch();
 }
+
