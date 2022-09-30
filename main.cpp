@@ -8,25 +8,33 @@
 #include <iostream>
 //#include<conio.h>
 #include<string>
+#include <fstream>
 #include<windows.h>
 using namespace std;
+
+void add_student();
+void add_teacher();
+void add_staff();
 
 struct student {
 string name;
 string department;
 int  roll;
+int spreadsheet_no;
 };
 
 struct teacher {
     string name;
     string department;
     string position;
+    int spreadsheet_no;
 };
 
 struct staff {
     string name;
     string department;
     string position;
+    int spreadsheet_no;
 };
 
 /// Function for About Developers
@@ -34,24 +42,7 @@ void about_developers()
 {
     cout << "About Us\n\n";
 }
-void add_student()
-{
-    char enter;
-    struct student s1;
-    cout<<"\n";
-    cout <<"\t\t\t\t  Enter Full Name: ";
-    cin >> enter;
-    getline(cin, s1.name);
-    cout<<"\t\t\t\t  Enter Department: ";
-    cin >> enter;
-    getline(cin, s1.department);
-    cout <<"\t\t\t\t  Enter Roll No: ";
-    cin>>s1.roll;
-    cout<<"\n";
-    cout<<"\t\t\t\t Student Info Added Successfully...."<<endl;
-///file handleing part
 
-}
 /// Function for Student Operations
 void student_op()
 {
@@ -84,6 +75,67 @@ void student_op()
 
 }
 
+/// Function for adding new student
+void add_student()
+{
+    int sz, line_count = 0, student_count;
+    char line[2000];
+
+    struct student s1;
+    cout<<"\n";
+    ifstream read_info;
+    ofstream write_info;
+
+    ///name-department input  single
+    read_info.open("student.csv",ifstream::app);
+    read_info.seekg(0,read_info.end);
+    ifstream inFile("student.csv");
+
+
+    sz = read_info.tellg();
+    if (sz == 0) {
+            write_info.open("student.csv", ios::app);
+            write_info << "Serial" << "," << "Name" << "," << "Department" << "," << "Roll" << "\n";
+    }
+    else
+    {
+        line_count--;
+    }
+        ///roll,department,name input
+    ofstream student_info_append("student.csv", ios::app);
+    cout<<"\n";
+
+    while(inFile.eof() == 0)
+    {
+        inFile.getline(line,sizeof(line));
+        ++line_count;
+    }
+
+    cout << "\n\n\n\n\n";
+    cout << "\t\t\t   How Many Students Do You Want To Add?: ";
+    cin >> student_count;
+    cout << "\n\n";
+
+    for (int i = 0; i < student_count; i++)
+    {
+
+        cout <<"\t\t\t\t Enter Full Name: ";
+        getline(cin >> ws, s1.name);
+
+        cout<<"\t\t\t\t Enter Department: ";
+        getline(cin >> ws, s1.department);
+
+        cout <<"\t\t\t\t Enter Roll No: ";
+        cin>>s1.roll;
+
+        cout<<"\n";
+
+        student_info_append << line_count++ << "," << s1.name << "," << s1.department << "," << s1.roll << "\n";
+        cout<< "\t\t\t  Student Info Added Successfully....\n"<< endl;
+    }
+    write_info.close();
+}
+
 /// Function for student info
 void student_info()
 {
@@ -103,26 +155,6 @@ void student_info()
     else if (student_info_op == '2');
         /// Go to find student info
 
-}
-
-/// Function for adding new teacher
-void add_teacher()
-{
-    char enter;
-    struct teacher t1;
-    cout<<"\n";
-    cout <<"\t\t\t\t  Enter Full Name: ";
-    cin >> enter;
-    getline(cin, t1.name);
-    cout<<"\t\t\t\t  Enter Department: ";
-    cin >> enter;
-    getline(cin, t1.department);
-    cout <<"\t\t\t\t  Enter Position: ";
-    cin >> enter;
-    getline(cin, t1.position);
-    cout<<"\n";
-    cout<<"\t\t\t\t Teacher Info Added Successfully...."<<endl;
-///file handling part
 }
 
 /// Function for handling teacher operations
@@ -156,6 +188,67 @@ void teacher_op()
     }
 }
 
+/// Function for adding new teacher
+void add_teacher()
+{
+    int sz, line_count = 0, teacher_count;
+    char line[2000];
+
+    struct teacher t1;
+    cout<<"\n";
+    ifstream read_info;
+    ofstream write_info;
+
+    ///name-department input  single
+    read_info.open("teacher.csv",ifstream::app);
+    read_info.seekg(0,read_info.end);
+    ifstream inFile("teacher.csv");
+
+
+    sz = read_info.tellg();
+    if (sz == 0) {
+            write_info.open("teacher.csv", ios::app);
+            write_info << "Serial" << "," << "Name" << "," << "Department" << "," << "Position" << "\n";
+    }
+    else
+    {
+        line_count--;
+    }
+        ///department,name, position input
+    ofstream teacher_info_append("teacher.csv", ios::app);
+    cout<<"\n";
+
+    while(inFile.eof() == 0)
+    {
+        inFile.getline(line,sizeof(line));
+        ++line_count;
+    }
+
+    cout << "\n\n\n\n\n";
+    cout << "\t\t\t   How Many Teachers Do You Want To Add?: ";
+    cin >> teacher_count;
+    cout << "\n\n";
+
+    for (int i = 0; i < teacher_count; i++)
+    {
+
+        cout <<"\t\t\t\t Enter Full Name: ";
+        getline(cin >> ws, t1.name);
+
+        cout<<"\t\t\t\t Enter Department: ";
+        getline(cin >> ws, t1.department);
+
+        cout <<"\t\t\t\t Enter Position: ";
+        getline(cin >> ws, t1.position);
+
+        cout<<"\n";
+
+        teacher_info_append << line_count++ << "," << t1.name << "," << t1.department << "," << t1.position << "\n";
+        cout<< "\t\t\t  Teacher Info Added Successfully....\n"<< endl;
+    }
+    write_info.close();
+}
+
 /// Function for teacher info
 void teacher_info()
 {
@@ -178,25 +271,6 @@ void teacher_info()
     }
 }
 
-/// Function for adding new staff
-void add_staff()
-{
-    char enter;
-    struct staff st1;
-    cout<<"\n";
-    cout <<"\t\t\t\t  Enter Full Name: ";
-    cin >> enter;
-    getline(cin, st1.name);
-    cout<<"\t\t\t\t  Enter Department: ";
-    cin >> enter;
-    getline(cin, st1.department);
-    cout <<"\t\t\t\t  Enter Position: ";
-    cin >> enter;
-    getline(cin, st1.position);
-    cout<<"\n";
-    cout<<"\t\t\t\t Staff Info Added Successfully...."<<endl;
-///file handling part
-}
 
 /// Function for Staff Operations
 void staff_op()
@@ -227,6 +301,67 @@ void staff_op()
         }
 
     }
+}
+
+/// Function for adding new staff
+void add_staff()
+{
+    int sz, line_count = 0, staff_count;
+    char line[2000];
+
+    struct staff st1;
+    cout<<"\n";
+    ifstream read_info;
+    ofstream write_info;
+
+    ///name-department input  single
+    read_info.open("staff.csv",ifstream::app);
+    read_info.seekg(0,read_info.end);
+    ifstream inFile("staff.csv");
+
+
+    sz = read_info.tellg();
+    if (sz == 0) {
+            write_info.open("staff.csv", ios::app);
+            write_info << "Serial" << "," << "Name" << "," << "Department" << "," << "Position" << "\n";
+    }
+    else
+    {
+        line_count--;
+    }
+        ///department,name, position input
+    ofstream staff_info_append("staff.csv", ios::app);
+    cout<<"\n";
+
+    while(inFile.eof() == 0)
+    {
+        inFile.getline(line,sizeof(line));
+        ++line_count;
+    }
+
+    cout << "\n\n\n\n\n";
+    cout << "\t\t\t   How Many Staffs Do You Want To Add?: ";
+    cin >> staff_count;
+    cout << "\n\n";
+
+    for (int i = 0; i < staff_count; i++)
+    {
+
+        cout <<"\t\t\t\t Enter Full Name: ";
+        getline(cin >> ws, st1.name);
+
+        cout<<"\t\t\t\t Enter Department: ";
+        getline(cin >> ws, st1.department);
+
+        cout <<"\t\t\t\t Enter Position: ";
+        getline(cin >> ws, st1.position);
+
+        cout<<"\n";
+
+        staff_info_append << line_count++ << "," << st1.name << "," << st1.department << "," << st1.position << "\n";
+        cout<< "\t\t\t  Staff Info Added Successfully....\n"<< endl;
+    }
+    write_info.close();
 }
 
 /// Function for Staff Info
