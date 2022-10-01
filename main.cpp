@@ -4,17 +4,23 @@
     /// 3. Project Name
     /// 4. Frame Design
     /// 5.student input more than one
+    /// 6.For wrong input in delete operation
+    /// 7.Spreedsheet(colomn) number adding
 
 #include <iostream>
-//#include<conio.h>
+#include<conio.h>
 #include<string>
 #include <fstream>
 #include<windows.h>
+#include<vector>
 using namespace std;
 
 void add_student();
 void add_teacher();
 void add_staff();
+void delete_student();
+void delete_teacher();
+void delete_staff();
 
 struct student {
 string name;
@@ -60,6 +66,7 @@ void student_op()
     }
     else if(operation=='2')
     {
+        delete_student();
         break;
     }
     else if(operation=='3')
@@ -132,6 +139,37 @@ void add_student()
     }
     write_info.close();
 }
+///Function  for Deleting Student info
+void delete_student()
+{
+    int spreed_sheet_number;
+    cout<<"\n\n\n";
+    cout << "\t\t\t   Enter Student SpreedSheet Number: ";
+    cin >>spreed_sheet_number;
+    ifstream read_file("student.csv",ios::in);
+    vector<string> lines;
+    string line;
+
+    while (getline(read_file, line))
+    lines.push_back(line);
+
+
+    read_file.close();
+    ofstream write_file("student.csv");
+    spreed_sheet_number--;
+    for (int i = 0; i < lines.size(); i++){
+        if (i != spreed_sheet_number)
+      {
+        write_file << lines[i] << endl;
+      }
+    }
+       cout<<"\n\n\n" ;
+      cout<< "\t\t\t   Student Info Deleted Successfully....\n"<< endl;
+
+     write_file.close();
+
+
+}
 
 /// Function for student info
 void student_info()
@@ -175,6 +213,7 @@ void teacher_op()
         }
         else if(operation=='2')
         {
+            delete_teacher();
             break;
         }
         else if(operation=='3')
@@ -245,6 +284,38 @@ void add_teacher()
     }
     write_info.close();
 }
+///Function  for Deleting Teacher info;
+void delete_teacher()
+{
+    int spreed_sheet_number;
+    cout<<"\n\n\n";
+    cout << "\t\t\t   Enter Teacher SpreedSheet Number: ";
+    cin >>spreed_sheet_number;
+    ifstream read_file("teacher.csv",ios::in);
+    vector<string> lines;
+    string line;
+
+    while (getline(read_file, line))
+    lines.push_back(line);
+
+
+    read_file.close();
+    ofstream write_file("teacher.csv");
+    spreed_sheet_number--;
+    for (int i = 0; i < lines.size(); i++){
+        if (i != spreed_sheet_number)
+      {
+        write_file << lines[i] << endl;
+      }
+    }
+       cout<<"\n\n\n" ;
+      cout<< "\t\t\t   Teacher Info Deleted Successfully....\n"<< endl;
+
+     write_file.close();
+
+
+}
+
 
 /// Function for teacher info
 void teacher_info()
@@ -290,6 +361,7 @@ void staff_op()
         }
         else if(operation == '2')
         {
+            delete_staff();
             break;
         }
         else if(operation == '3')
@@ -359,6 +431,36 @@ void add_staff()
         cout<< "\t\t\t  Staff Info Added Successfully....\n"<< endl;
     }
     write_info.close();
+}
+///Function  for Deleting Staff info
+void delete_staff()
+{
+    int spreed_sheet_number;
+    cout<<"\n\n\n";
+    cout << "\t\t\t   Enter Staff SpreedSheet Number: ";
+    cin >>spreed_sheet_number;
+    ifstream read_file("staff.csv",ios::in);
+    vector<string> lines;
+    string line;
+
+    while (getline(read_file, line))
+    lines.push_back(line);
+
+
+    read_file.close();
+    ofstream write_file("staff.csv");
+    spreed_sheet_number--;
+    for (int i = 0; i < lines.size(); i++){
+        if (i != spreed_sheet_number)
+      {
+        write_file << lines[i] << endl;
+      }
+    }
+       cout<<"\n\n\n" ;
+      cout<< "\t\t\t   Staff Info Deleted Successfully....\n"<< endl;
+
+     write_file.close();
+
 }
 
 /// Function for Staff Info
