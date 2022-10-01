@@ -20,21 +20,18 @@ struct student {
 string name;
 string department;
 int  roll;
-int spreadsheet_no;
 };
 
 struct teacher {
     string name;
     string department;
     string position;
-    int spreadsheet_no;
 };
 
 struct staff {
     string name;
     string department;
     string position;
-    int spreadsheet_no;
 };
 
 /// Function for About Developers
@@ -95,7 +92,7 @@ void add_student()
     sz = read_info.tellg();
     if (sz == 0) {
             write_info.open("student.csv", ios::app);
-            write_info << "Serial" << "," << "Name" << "," << "Department" << "," << "Roll" << "\n";
+            write_info << "Name" << "," << "Department" << "," << "Roll" << "\n";
     }
     else
     {
@@ -130,7 +127,7 @@ void add_student()
 
         cout<<"\n";
 
-        student_info_append << line_count++ << "," << s1.name << "," << s1.department << "," << s1.roll << "\n";
+        student_info_append << s1.name << "," << s1.department << "," << s1.roll << "\n";
         cout<< "\t\t\t  Student Info Added Successfully....\n"<< endl;
     }
     write_info.close();
@@ -208,7 +205,7 @@ void add_teacher()
     sz = read_info.tellg();
     if (sz == 0) {
             write_info.open("teacher.csv", ios::app);
-            write_info << "Serial" << "," << "Name" << "," << "Department" << "," << "Position" << "\n";
+            write_info << "Name" << "," << "Department" << "," << "Position" << "\n";
     }
     else
     {
@@ -243,7 +240,7 @@ void add_teacher()
 
         cout<<"\n";
 
-        teacher_info_append << line_count++ << "," << t1.name << "," << t1.department << "," << t1.position << "\n";
+        teacher_info_append << t1.name << "," << t1.department << "," << t1.position << "\n";
         cout<< "\t\t\t  Teacher Info Added Successfully....\n"<< endl;
     }
     write_info.close();
@@ -323,7 +320,7 @@ void add_staff()
     sz = read_info.tellg();
     if (sz == 0) {
             write_info.open("staff.csv", ios::app);
-            write_info << "Serial" << "," << "Name" << "," << "Department" << "," << "Position" << "\n";
+            write_info << "Name" << "," << "Department" << "," << "Position" << "\n";
     }
     else
     {
@@ -358,7 +355,7 @@ void add_staff()
 
         cout<<"\n";
 
-        staff_info_append << line_count++ << "," << st1.name << "," << st1.department << "," << st1.position << "\n";
+        staff_info_append << st1.name << "," << st1.department << "," << st1.position << "\n";
         cout<< "\t\t\t  Staff Info Added Successfully....\n"<< endl;
     }
     write_info.close();
