@@ -21,6 +21,9 @@ void add_staff();
 void delete_student();
 void delete_teacher();
 void delete_staff();
+void modify_student();
+void modify_teacher();
+void modify_staff();
 
 struct student {
 string name;
@@ -71,6 +74,7 @@ void student_op()
     }
     else if(operation=='3')
     {
+        modify_student();
         break;
     }
 
@@ -171,6 +175,53 @@ void delete_student()
 
 }
 
+/// Function for modifying student info
+void modify_student()
+{
+    student s1;
+    int spreed_sheet_number;
+
+    cout << "\n\n\n";
+    cout << "\t\t\t   Enter Student SpreedSheet Number: ";
+    cin >> spreed_sheet_number;
+    cout << "\n\n";
+    cout << "\t\t\t   Enter The New Info You Want To Put In The File...\n\n\n";
+
+    cout << "\t\t\t\t   Name: ";
+    getline(cin >> ws, s1.name);
+    cout << "\t\t\t\t   Department: ";
+    getline(cin >> ws, s1.department);
+    cout << "\t\t\t\t   Roll: ";
+    cin >> s1.roll;
+
+    ifstream read_file("student.csv",ios::in);
+
+    vector <string> lines;
+    string line;
+
+    while (getline(read_file, line))
+        lines.push_back(line);
+
+    read_file.close();
+
+    ofstream write_file("student.csv");
+
+    spreed_sheet_number--;
+
+    for (int i = 0; i < lines.size(); i++)
+    {
+        if (i != spreed_sheet_number)
+            write_file << lines[i] << endl;
+        else
+            write_file << s1.name << "," << s1.department<< "," << s1.roll<< "\n";
+    }
+
+    cout << "\n\n";
+    cout << "\t\t\t   Student Info Modified Successfully...\n";
+
+    write_file.close();
+}
+
 /// Function for student info
 void student_info()
 {
@@ -218,6 +269,7 @@ void teacher_op()
         }
         else if(operation=='3')
         {
+            modify_teacher();
             break;
         }
 
@@ -316,6 +368,52 @@ void delete_teacher()
 
 }
 
+/// Function for modifying teacher info
+void modify_teacher()
+{
+    teacher t1;
+    int spreed_sheet_number;
+
+    cout << "\n\n\n";
+    cout << "\t\t\t   Enter Teacher SpreedSheet Number: ";
+    cin >> spreed_sheet_number;
+    cout << "\n\n";
+    cout << "\t\t\t   Enter The New Info You Want To Put In The File...\n\n\n";
+
+    cout << "\t\t\t\t   Name: ";
+    getline(cin >> ws, t1.name);
+    cout << "\t\t\t\t   Department: ";
+    getline(cin >> ws, t1.department);
+    cout << "\t\t\t\t   Position: ";
+    getline(cin >> ws, t1.position);
+
+    ifstream read_file("teacher.csv",ios::in);
+
+    vector <string> lines;
+    string line;
+
+    while (getline(read_file, line))
+        lines.push_back(line);
+
+    read_file.close();
+
+    ofstream write_file("teacher.csv");
+
+    spreed_sheet_number--;
+
+    for (int i = 0; i < lines.size(); i++)
+    {
+        if (i != spreed_sheet_number)
+            write_file << lines[i] << endl;
+        else
+            write_file << t1.name << "," << t1.department<< "," << t1.position<< "\n";
+    }
+
+    cout << "\n\n";
+    cout << "\t\t\t   Teacher Info Modified Successfully...\n";
+
+    write_file.close();
+}
 
 /// Function for teacher info
 void teacher_info()
@@ -338,7 +436,6 @@ void teacher_info()
 
     }
 }
-
 
 /// Function for Staff Operations
 void staff_op()
@@ -366,6 +463,7 @@ void staff_op()
         }
         else if(operation == '3')
         {
+            modify_staff();
             break;
         }
 
@@ -463,6 +561,53 @@ void delete_staff()
 
 }
 
+/// Function for modifying staff info
+void modify_staff()
+{
+    staff st1;
+    int spreed_sheet_number;
+
+    cout << "\n\n\n";
+    cout << "\t\t\t   Enter Staff SpreedSheet Number: ";
+    cin >> spreed_sheet_number;
+    cout << "\n\n";
+    cout << "\t\t\t   Enter The New Info You Want To Put In The File...\n\n\n";
+
+    cout << "\t\t\t\t   Name: ";
+    getline(cin >> ws, st1.name);
+    cout << "\t\t\t\t   Department: ";
+    getline(cin >> ws, st1.department);
+    cout << "\t\t\t\t   Position: ";
+    getline(cin >> ws, st1.position);
+
+    ifstream read_file("staff.csv",ios::in);
+
+    vector <string> lines;
+    string line;
+
+    while (getline(read_file, line))
+        lines.push_back(line);
+
+    read_file.close();
+
+    ofstream write_file("staff.csv");
+
+    spreed_sheet_number--;
+
+    for (int i = 0; i < lines.size(); i++)
+    {
+        if (i != spreed_sheet_number)
+            write_file << lines[i] << endl;
+        else
+            write_file << st1.name << "," << st1.department<< "," << st1.position<< "\n";
+    }
+
+    cout << "\n\n";
+    cout << "\t\t\t   Staff Info Modified Successfully...\n";
+
+    write_file.close();
+}
+
 /// Function for Staff Info
 void staff_info()
 {
@@ -552,6 +697,6 @@ int main(){
 
 
 
-    //getch();
+    getch();
 }
 
