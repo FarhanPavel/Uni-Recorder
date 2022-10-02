@@ -24,6 +24,9 @@ void delete_staff();
 void modify_student();
 void modify_teacher();
 void modify_staff();
+void find_student();
+void find_teacher();
+void find_staff();
 
 struct student {
 string name;
@@ -80,6 +83,66 @@ void student_op()
 
     }
 
+
+}
+///Function For Finding Student_info
+void find_student()
+{
+  ///
+    string srch;
+    int offset,j=0,flag=0;
+    string line,sr;
+
+    ifstream Myfile;
+    Myfile.open("student.csv");
+
+    cout<<"\n\n\n\n";
+    cout<<"\t\t\t   Search For The Student Data By Entering Name"<<endl;
+    cout << "\t\t\t   Enter the name: ";
+    getline(cin>>ws,srch);
+    cout<<"\n\n\n";
+
+    if (Myfile.is_open())
+    {
+      while (!Myfile.eof())
+        {
+        getline(Myfile, line);
+        if ((offset = line.find(srch, 0)) != string::npos)
+            {
+            sr=line;
+            cout<<"\t\t\t   ";
+            while(sr[j]!='\0')
+            {
+                if(sr[j]==',')
+                {
+                    cout<<" ";
+                }
+                else
+                {
+                    cout<<sr[j];
+                }
+                j++;
+                flag=1;
+            }
+            cout<<endl;
+            j=0;
+
+                }
+            }
+
+            Myfile.close();
+        }
+
+        if(flag==0)
+        {
+
+            cout<<"\t\t\t\t  Data Not Found...."<<endl;
+        }
+        else
+        {
+            cout<<"\n\n";
+            cout<<"\t\t\t   Data Found Successfully...."<<endl;
+        }
 
 }
 
@@ -238,9 +301,10 @@ void student_info()
         /// Go to operations
         student_op();
     }
-    else if (student_info_op == '2');
+    else if (student_info_op == '2'){
         /// Go to find student info
-
+        find_student();
+    }
 }
 
 /// Function for handling teacher operations
@@ -275,6 +339,67 @@ void teacher_op()
 
     }
 }
+///function for  finding teacher_info
+ void find_teacher()
+ {
+    string srch;
+    int offset,j=0,flag=0;
+    string line,sr;
+
+    ifstream Myfile;
+    Myfile.open("teacher.csv");
+
+    cout<<"\n\n\n\n";
+    cout<<"\t\t\t   Search For The Teacher Data By Entering Name"<<endl;
+    cout << "\t\t\t   Enter the name: ";
+    getline(cin>>ws,srch);
+    cout<<"\n\n\n";
+
+    if (Myfile.is_open())
+    {
+      while (!Myfile.eof())
+        {
+        getline(Myfile, line);
+        if ((offset = line.find(srch, 0)) != string::npos)
+            {
+            sr=line;
+            cout<<"\t\t\t   ";
+            while(sr[j]!='\0')
+            {
+                if(sr[j]==',')
+                {
+                    cout<<" ";
+                }
+                else
+                {
+                    cout<<sr[j];
+                }
+                j++;
+                flag=1;
+            }
+            cout<<endl;
+            j=0;
+
+                }
+            }
+
+            Myfile.close();
+        }
+
+        if(flag==0)
+        {
+
+            cout<<"\t\t\t\t  Data Not Found...."<<endl;
+        }
+        else
+        {
+            cout<<"\n\n";
+            cout<<"\t\t\t   Data Found Successfully...."<<endl;
+        }
+
+
+ }
+
 
 /// Function for adding new teacher
 void add_teacher()
@@ -430,9 +555,10 @@ void teacher_info()
         ///Go to teacher operation
         teacher_op();
     }
-    else if(teacher_info_op=='2');
+    else if(teacher_info_op=='2')
     {
        ///go to previous teacher info finding page
+         find_teacher();
 
     }
 }
@@ -468,6 +594,65 @@ void staff_op()
         }
 
     }
+}
+///function for finding staff_info
+void find_staff()
+{
+    string srch;
+    int offset,j=0,flag=0;
+    string line,sr;
+
+    ifstream Myfile;
+    Myfile.open("staff.csv");
+
+    cout<<"\n\n\n\n";
+    cout<<"\t\t\t   Search For The Staff Data By Entering Name"<<endl;
+    cout << "\t\t\t   Enter the name: ";
+    getline(cin>>ws,srch);
+    cout<<"\n\n\n";
+
+    if (Myfile.is_open())
+    {
+      while (!Myfile.eof())
+        {
+        getline(Myfile, line);
+        if ((offset = line.find(srch, 0)) != string::npos)
+            {
+            sr=line;
+            cout<<"\t\t\t   ";
+            while(sr[j]!='\0')
+            {
+                if(sr[j]==',')
+                {
+                    cout<<" ";
+                }
+                else
+                {
+                    cout<<sr[j];
+                }
+                j++;
+                flag=1;
+            }
+            cout<<endl;
+            j=0;
+
+                }
+            }
+
+            Myfile.close();
+        }
+
+        if(flag==0)
+        {
+
+            cout<<"\t\t\t\t  Data Not Found...."<<endl;
+        }
+        else
+        {
+            cout<<"\n\n";
+            cout<<"\t\t\t   Data Found Successfully...."<<endl;
+        }
+
 }
 
 /// Function for adding new staff
@@ -624,8 +809,10 @@ void staff_info()
         /// Go to operations
         staff_op();
     }
-    else if (staff_info_op == '2');
+    else if (staff_info_op == '2'){
         /// Go to find staff info
+        find_staff();
+    }
 }
 
 
