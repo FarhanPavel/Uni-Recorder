@@ -49,41 +49,69 @@ struct staff {
 /// Function for About Developers
 void about_developers()
 {
-    cout << "About Us\n\n";
+    cout << "\n\n\n";
+    cout << "\t\t\t\t\tAbout Us\n\n";
+    cout << "\t\t\t\tMd. Farhan Islam Pavel\n";
+    cout << "\t\t\t\tInstitute of Information Technology, Batch-12, Jahangirnagar University.\n";
+    cout << "\t\t\t\tEmail: farhanpavel3@gmail.com\n\n";
+
+    cout << "\t\t\t\tZunaid Ali\n";
+    cout << "\t\t\t\tInstitute of Information Technology, Batch-12, Jahangirnagar University.\n";
+    cout << "\t\t\t\tEmail: zpokean@gmail.com\n";
 }
 
 /// Function for Student Operations
 void student_op()
 {
     char operation;
+    char continue_op = 'y';
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "\t\t\t\t     Operations\n\n";
     cout << "\t\t\t\t 1. Add New Student Info\n";
     cout << "\t\t\t\t 2. Delete Student Info\n";
     cout << "\t\t\t\t 3. Modify Student Info\n";
-    cout<<"\n";
+    cout << "\n";
     while(1)
-    {cout<<"\t\t\t   Which Operation do you want to perform?: ";
-    cin>>operation;
-    if(operation=='1')
     {
-        add_student();
-        break;
-    }
-    else if(operation=='2')
-    {
-        delete_student();
-        break;
-    }
-    else if(operation=='3')
-    {
-        modify_student();
-        break;
-    }
+        cout << "\t\t\t   Which Operation do you want to perform?: ";
+        cin >> operation;
+        if(operation == '1')
+        {
+            add_student();
+            break;
+        }
+        else if(operation == '2')
+        {
+            delete_student();
+
+            while (1)
+            {
+                cout << "\t\t\t    Do You Wish To Continue?(y/n): ";
+                cin >> continue_op;
+                if (continue_op == 'y')
+                    delete_student();
+                else
+                    break;
+            }
+            break;
+        }
+        else if(operation == '3')
+        {
+            modify_student();
+
+            while (1)
+            {
+                cout << "\t\t\t    Do You Wish To Continue?(y/n): ";
+                cin >> continue_op;
+                if (continue_op == 'y')
+                    modify_student();
+                else
+                    break;
+            }
+            break;
+        }
 
     }
-
-
 }
 ///Function For Finding Student_info
 void find_student()
@@ -212,7 +240,7 @@ void delete_student()
     int spreed_sheet_number;
     cout<<"\n\n\n";
     cout << "\t\t\t   Enter Student SpreedSheet Number: ";
-    cin >>spreed_sheet_number;
+    cin >> spreed_sheet_number;
     ifstream read_file("student.csv",ios::in);
     vector<string> lines;
     string line;
@@ -311,6 +339,7 @@ void student_info()
 void teacher_op()
 {
     char operation;
+    char continue_op;
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "\t\t\t\t     Operations\n\n";
     cout << "\t\t\t\t 1. Add New Teacher Info\n";
@@ -329,11 +358,31 @@ void teacher_op()
         else if(operation=='2')
         {
             delete_teacher();
+
+            while (1)
+            {
+                cout << "\t\t\t    Do You Wish To Continue?(y/n): ";
+                cin >> continue_op;
+                if (continue_op == 'y')
+                    delete_teacher();
+                else
+                    break;
+            }
             break;
         }
         else if(operation=='3')
         {
             modify_teacher();
+
+            while (1)
+            {
+                cout << "\t\t\t    Do You Wish To Continue?(y/n): ";
+                cin >> continue_op;
+                if (continue_op == 'y')
+                    modify_teacher();
+                else
+                    break;
+            }
             break;
         }
 
@@ -567,6 +616,7 @@ void teacher_info()
 void staff_op()
 {
     char operation;
+    char continue_op;
     cout << "\n\n\n\n\n\n\n\n\n";
     cout << "\t\t\t\t     Operations\n\n";
     cout << "\t\t\t\t 1. Add New Staff Info\n";
@@ -585,11 +635,31 @@ void staff_op()
         else if(operation == '2')
         {
             delete_staff();
+
+            while (1)
+            {
+                cout << "\t\t\t    Do You Wish To Continue?(y/n): ";
+                cin >> continue_op;
+                if (continue_op == 'y')
+                    delete_staff();
+                else
+                    break;
+            }
             break;
         }
         else if(operation == '3')
         {
             modify_staff();
+
+            while (1)
+            {
+                cout << "\t\t\t    Do You Wish To Continue?(y/n): ";
+                cin >> continue_op;
+                if (continue_op == 'y')
+                    modify_staff();
+                else
+                    break;
+            }
             break;
         }
 
