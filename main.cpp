@@ -907,7 +907,7 @@ int main(){
    cout<<"\t\t\t       "<<"pzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpz";
    cout<<endl<<"\t\t\t       ~\t\t\t\t\t\t    ~"<<endl<<"\t\t\t       ~\t\t\t\t\t\t    ~";
    cout<<""<<endl;//project name
-   cout<<"\t\t\t       ~\t"<<" Student Record Management System"<<"\t    ~"<<endl;
+   cout<<"\t\t\t       ~\t"<<" University Record Management System"<<"\t    ~"<<endl;
    cout<<"\t\t\t       ~\t"<<"\t\t\t\t\t    ~"<<"\n";
    cout<<"\t\t\t       ~\t"<<"\t\t\t\t\t    ~"<<"\n";
    cout<<"\t\t\t       ~\t"<<"   Developed By: Pavel && Zunaid\t    ~"<<endl<<"\t\t\t       ~\t\t\t\t\t\t    ~"<<endl;
