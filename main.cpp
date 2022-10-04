@@ -1,11 +1,4 @@
-/// Things to add in the future
-    /// 1. Color change
-    /// 2. Previous Page
-    /// 3. Project Name
-    /// 4. Frame Design
-    /// 5.student input more than one
-    /// 6.For wrong input in delete operation
-    /// 7.Spreedsheet(colomn) number adding
+///Uni-Recorder
 
 #include <iostream>
 #include<conio.h>
@@ -49,6 +42,7 @@ struct staff {
 /// Function for About Developers
 void about_developers()
 {
+    system("cls");
     cout << "\n\n\n";
     cout << "\t\t\t\t\tAbout Us\n\n";
     cout << "\t\t\t\tMd. Farhan Islam Pavel\n";
@@ -63,10 +57,11 @@ void about_developers()
 /// Function for Student Operations
 void student_op()
 {
+    system("cls");
     char operation;
     char continue_op = 'y';
-    cout << "\n\n\n\n\n\n\n\n\n";
-    cout << "\t\t\t\t     Operations\n\n";
+    cout << "\n\n\n";
+    cout << "\t\t\t\t       Operations\n\n";
     cout << "\t\t\t\t 1. Add New Student Info\n";
     cout << "\t\t\t\t 2. Delete Student Info\n";
     cout << "\t\t\t\t 3. Modify Student Info\n";
@@ -116,7 +111,8 @@ void student_op()
 ///Function For Finding Student_info
 void find_student()
 {
-  ///
+
+    system("cls");
     string srch;
     int offset,j=0,flag=0;
     string line,sr;
@@ -177,6 +173,7 @@ void find_student()
 /// Function for adding new student
 void add_student()
 {
+     system("cls");
     int sz, line_count = 0, student_count;
     char line[2000];
 
@@ -237,6 +234,7 @@ void add_student()
 ///Function  for Deleting Student info
 void delete_student()
 {
+    system("cls");
     int spreed_sheet_number;
     cout<<"\n\n\n";
     cout << "\t\t\t   Enter Student SpreedSheet Number: ";
@@ -269,6 +267,7 @@ void delete_student()
 /// Function for modifying student info
 void modify_student()
 {
+    system("cls");
     student s1;
     int spreed_sheet_number;
 
@@ -316,13 +315,14 @@ void modify_student()
 /// Function for student info
 void student_info()
 {
-    cout << "\n\n\n\n\n\n\n\n\n";
-    cout << "\t\t\t\t     Students' Info\n\n";
+     system("cls");
+    cout << "\n\n\n";
+    cout << "\t\t\t\t\t     Students' Info\n\n";
     cout << "\t\t\t\t 1. Operations\n";
     cout << "\t\t\t\t 2. Find Student Info\n\n";
 
     char student_info_op;
-    cout << "\t\t\t  Which Operation do you want to perform?: ";
+    cout << "\t\t\t    Which Operation do you want to perform?: ";
     cin >> student_info_op;
 
     if (student_info_op == '1') {
@@ -338,10 +338,11 @@ void student_info()
 /// Function for handling teacher operations
 void teacher_op()
 {
+     system("cls");
     char operation;
     char continue_op;
-    cout << "\n\n\n\n\n\n\n\n\n";
-    cout << "\t\t\t\t     Operations\n\n";
+    cout << "\n\n\n";
+    cout << "\t\t\t\t      Operations\n\n";
     cout << "\t\t\t\t 1. Add New Teacher Info\n";
     cout << "\t\t\t\t 2. Delete Teacher Info\n";
     cout << "\t\t\t\t 3. Modify Teacher Info\n\n";
@@ -391,6 +392,7 @@ void teacher_op()
 ///function for  finding teacher_info
  void find_teacher()
  {
+    system("cls");
     string srch;
     int offset,j=0,flag=0;
     string line,sr;
@@ -453,6 +455,7 @@ void teacher_op()
 /// Function for adding new teacher
 void add_teacher()
 {
+     system("cls");
     int sz, line_count = 0, teacher_count;
     char line[2000];
 
@@ -513,6 +516,7 @@ void add_teacher()
 ///Function  for Deleting Teacher info;
 void delete_teacher()
 {
+     system("cls");
     int spreed_sheet_number;
     cout<<"\n\n\n";
     cout << "\t\t\t   Enter Teacher SpreedSheet Number: ";
@@ -545,6 +549,7 @@ void delete_teacher()
 /// Function for modifying teacher info
 void modify_teacher()
 {
+     system("cls");
     teacher t1;
     int spreed_sheet_number;
 
@@ -592,7 +597,8 @@ void modify_teacher()
 /// Function for teacher info
 void teacher_info()
 {
-    cout << "\n\n\n\n\n\n\n\n\n";
+     system("cls");
+    cout << "\n\n\n";
     cout << "\t\t\t\t     Teacher's Info\n\n";
     cout << "\t\t\t\t 1. Operations\n";
     cout << "\t\t\t\t 2. Find Teacher Info\n\n";
@@ -615,10 +621,11 @@ void teacher_info()
 /// Function for Staff Operations
 void staff_op()
 {
+     system("cls");
     char operation;
     char continue_op;
-    cout << "\n\n\n\n\n\n\n\n\n";
-    cout << "\t\t\t\t     Operations\n\n";
+    cout << "\n\n\n";
+    cout << "\t\t\t\t      Operations\n\n";
     cout << "\t\t\t\t 1. Add New Staff Info\n";
     cout << "\t\t\t\t 2. Delete Staff Info\n";
     cout << "\t\t\t\t 3. Modify Staff Info\n\n";
@@ -668,6 +675,7 @@ void staff_op()
 ///function for finding staff_info
 void find_staff()
 {
+     system("cls");
     string srch;
     int offset,j=0,flag=0;
     string line,sr;
@@ -728,6 +736,7 @@ void find_staff()
 /// Function for adding new staff
 void add_staff()
 {
+     system("cls");
     int sz, line_count = 0, staff_count;
     char line[2000];
 
@@ -788,6 +797,7 @@ void add_staff()
 ///Function  for Deleting Staff info
 void delete_staff()
 {
+     system("cls");
     int spreed_sheet_number;
     cout<<"\n\n\n";
     cout << "\t\t\t   Enter Staff SpreedSheet Number: ";
@@ -819,6 +829,7 @@ void delete_staff()
 /// Function for modifying staff info
 void modify_staff()
 {
+     system("cls");
     staff st1;
     int spreed_sheet_number;
 
@@ -866,7 +877,8 @@ void modify_staff()
 /// Function for Staff Info
 void staff_info()
 {
-    cout << "\n\n\n\n\n\n\n\n\n";
+     system("cls");
+    cout << "\n\n\n";
     cout << "\t\t\t\t     Staff Info\n\n";
     cout << "\t\t\t\t 1. Operations\n";
     cout << "\t\t\t\t 2. Find Staff Info\n\n";
@@ -903,16 +915,16 @@ int main(){
    cout<<"\t\t\t       ~\t     "<<"Jahangirnagar University\t\t    ~"<<endl<<"\t\t\t       ~\t   \t\t\t\t\t    ~"<<endl;
    cout<<"\t\t\t       ~\t     \t\t\t\t\t    ~"<<endl<<"\t\t\t       ~\t     \t\t\t\t\t    ~"<<endl;
    cout<<"\t\t\t       "<<"zpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzpzp" << endl << endl;
-   cout << "\t\t\t       \t\t   Press ENTER To Continue"<<ends;
+   cout << "\t\t\t       \t\t    Press ENTER To Continue"<<ends;
 
    while (cin.get() != '\n')
    {
        cin.get();
    }
    cout << endl<< endl<< endl<< endl<< endl;
-
+     system("cls");
    ///Start Page
-
+    cout<<"\n\n\n";
    cout << "\t\t\t\t\t\t    Welcome!!" << endl << endl;
    /// Student Info
    cout << "\t\t\t\t1. Students' Info\n";
@@ -923,12 +935,17 @@ int main(){
    /// About Us
    cout << "\t\t\t\t4. About The Developers\n\n";
    /// Call an operation
-   cout << "\t\t\t  Which Operation do you want to perform or ESC to Exit?: ";
+   cout << "\t\t\t  Which Operation do you want to perform or q to Exit?: ";
    cin >> start_page_operation;
 
    while (1)
    {
-   if (start_page_operation == '1') {
+   if(start_page_operation=='q')
+   {
+    break;
+   }
+
+   else if (start_page_operation == '1') {
     /// Go to student info
         student_info();
         break;
