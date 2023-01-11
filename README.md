@@ -14,7 +14,7 @@ Upon running the main.cpp file, you will be introduced with the Project Title an
 
 ![image](https://user-images.githubusercontent.com/96477152/193747285-bbcad955-192a-4702-b8ca-d7d3e21988d5.png)
 
-After pressing ```ENTER``` you will be welcomed the the above screen with a list of the main menu.
+After pressing ```ENTER``` you will be welcomed with the above screen with a list of the main menu.
 
 1. Students' Info
 2. Teachers' Info
